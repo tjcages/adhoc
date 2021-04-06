@@ -1,0 +1,27 @@
+.navigation-container {
+    display: flex;
+
+    .navigation-header {
+        justify-content: space-between;
+        
+        .navigation-search {
+            display: flex;
+            align-items: center;
+            background-color: $dark;
+            border-radius: $massive;
+            padding: $spacer $small;
+            color: red;
+        }
+
+        .navigation-filter {
+            background-color: $dark;
+            border-radius: $massive;
+            padding: $spacer;
+            color: $text-dark;
+        }
+    }
+
+    .navigation-content {
+
+    }
+}

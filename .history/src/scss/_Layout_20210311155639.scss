@@ -1,0 +1,19 @@
+.layout_container {
+    padding-top: 36px;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: row;
+
+    .layout_navigation {
+        width: 30vw;
+        flex-grow: 0.3;
+        background-color: red;
+    }
+
+    .layout_browser {
+        width: 70vw;
+        flex-grow: 0.7;
+        background-color: blue;
+    }
+}

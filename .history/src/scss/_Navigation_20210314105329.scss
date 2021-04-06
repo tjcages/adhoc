@@ -1,0 +1,26 @@
+.navigation-container {
+    display: flex;
+
+    .navigation-header {
+        display: inline-flex;
+        justify-content: space-between;
+        
+        .navigation-search {
+            background-color: $dark;
+            border-radius: $massive;
+            padding: $spacer $small;
+            color: $text-dark;
+        }
+
+        .navigation-filter {
+            background-color: $dark;
+            border-radius: $massive;
+            padding: $spacer;
+            color: $text-dark;
+        }
+    }
+
+    .navigation-content {
+
+    }
+}

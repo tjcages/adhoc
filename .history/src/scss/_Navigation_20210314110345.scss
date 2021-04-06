@@ -1,0 +1,42 @@
+.navigation-container {
+    display: inline-block;
+    padding: $medium;
+
+    .navigation-header {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color:red;
+        
+        .navigation-search {
+            display: flex;
+            align-items: center;
+            background-color: $dark;
+            border-radius: $massive;
+            padding: $spacer $small;
+
+            .navigation-subtext {
+                color: $text-dark;
+                padding-left: $spacer;
+            }
+        }
+
+        .navigation-filter {
+            background-color: $dark;
+            border-radius: $massive;
+            padding: $spacer;
+            width: $large;
+            height: $large;
+        }
+    }
+
+    .navigation-icon {
+        width: $medium;
+        height: $medium;
+        color: $text-dark;
+    }
+
+    .navigation-content {
+
+    }
+}

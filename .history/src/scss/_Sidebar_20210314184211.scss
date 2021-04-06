@@ -1,0 +1,23 @@
+.sidebar-container {
+    display: grid;
+    background-color: $dark;
+    position: absolute;
+    top: 0;
+    justify-content: space-between;
+    width: 70px;
+    height: 100%;
+    text-align: center;
+
+    .sidebar-main {
+        margin-left: $spacer;
+
+        .sidebar-icon {
+            width: $medium;
+            height: $medium;
+            color: $text-dark;
+        }
+    }
+
+    .sidebar-user {
+    }
+}

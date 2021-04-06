@@ -1,0 +1,9 @@
+function App() {
+  return (
+    <div className="App">
+      Hello nerds
+    </div>
+  );
+}
+
+export default App;

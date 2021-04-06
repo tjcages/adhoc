@@ -1,0 +1,23 @@
+.inbox-container {
+    background-color: $dark;
+    display: flex;
+    justify-content: space-between;
+    padding: $medium;
+
+    .inbox-image {
+        min-width: $xLarge;
+        height: $xLarge;
+        background-color: red;
+        border-radius: $xLarge;
+        margin-right: $small;
+    }
+
+    .inbox-content {
+        flex-grow: 1;
+        margin-right: $small;
+    }
+
+    .inbox-options {
+
+    }
+}

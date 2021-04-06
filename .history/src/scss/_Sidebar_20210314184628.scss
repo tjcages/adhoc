@@ -1,0 +1,38 @@
+.sidebar-container {
+    display: grid;
+    background-color: $dark;
+    position: absolute;
+    top: 0;
+    justify-content: space-between;
+    width: 70px;
+    height: 100%;
+    text-align: center;
+
+    .sidebar-main {
+        margin-top: $medium;
+        margin-left: $spacer;
+
+        .sidebar-button {
+            border-radius: $spacer;
+            padding: $spacer;
+            width: $large;
+            height: $large;
+            transition: 0.2s ease-in-out; 
+            margin-right: $small;
+            cursor: pointer;
+
+            .sidebar-icon {
+                width: $medium;
+                height: $medium;
+                color: $text-light;
+            }
+        }
+
+        .sidebar-button:hover {
+            background-color: $text-dark;
+        }
+    }
+
+    .sidebar-user {
+    }
+}

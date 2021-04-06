@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+// Fonts
+$font-family-serif: "Open Sans", serif;
+$font-family-sans-serif: "Montserrat", "Open Sans", sans-serif;
+$font-family-font-awesome: 'Font Awesome 5 Pro';
+$font-family-font-awesome-brands: 'Font Awesome 5 Brands';
+$Roboto-condensed: "Roboto Condensed", sans-serif;
+$Roboto: "Roboto", sans-serif;
+
+// Colors
+$primary:                               #FF5454 ;
+$secondary:                             #606975;
+$red:                                   #ff0000;
+$dark:                                  #374250;
+$light:                                 #f8f8f8;
+$gray:                                  #606975;
+$white:                                 #ffffff;
+$text-dark:                             #838899;
+
+// Body
+$body-bg:                               #E6E6E6;
+$body-color:                            #000;
+
+// Links
+$link-color:                            $text-dark;
+$link-decoration:                       none;
+$link-hover-color:                      $primary;
+$link-hover-decoration:                 none;

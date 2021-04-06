@@ -1,0 +1,57 @@
+.inbox-container {
+    background-color: $dark;
+    display: flex;
+    justify-content: space-between;
+    padding: $medium;
+    border-radius: $small;
+
+    .inbox-image {
+        min-width: $xLarge;
+        height: $xLarge;
+        background-color: red;
+        border-radius: $xLarge;
+        margin-right: $small;
+    }
+
+    .inbox-content {
+        flex-grow: 1;
+        margin-right: $small;
+
+        .inbox-h4 {
+            color: $white;
+            margin-bottom: $spacer;
+        }
+
+        .inbox-h5 {
+            color: $white;
+            margin-bottom: $spacer;
+        }
+
+        .inbox-p {
+            color: $text-dark;
+        }
+    }
+
+    .inbox-options {
+        border-radius: $massive;
+        padding: $spacer;
+        width: $large;
+        height: $large;
+        color: $text-dark;
+        position: relative;
+        top: -$small;
+        left: $small;
+        transition: 0.2s ease-in-out; 
+        cursor: pointer;
+
+        .inbox-icon {
+            width: $medium;
+            height: $medium;
+        }
+    }
+
+    .inbox-options:hover {
+        background-color: $text-dark;
+        color: $white;
+    }
+}

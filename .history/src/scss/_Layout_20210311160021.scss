@@ -1,0 +1,22 @@
+.layout_container {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+
+    .layout_navigation {
+        padding-top: 36px;
+        width: 30vw;
+        flex-grow: 0.3;
+
+        .grid_list {
+            height: '100vh';
+            transform: 'translateZ(0)'; // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+        }
+    }
+
+    .layout_browser {
+        width: 70vw;
+        flex-grow: 0.7;
+        background-color: blue;
+    }
+}

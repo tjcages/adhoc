@@ -1,0 +1,9 @@
+.browser-container {
+    background-color: $white;
+    margin: $medium;
+    padding: $medium;
+    margin-top: 0;
+    position: relative;
+    top: -$small;
+    height: calc(100vh - $xLarge);
+}

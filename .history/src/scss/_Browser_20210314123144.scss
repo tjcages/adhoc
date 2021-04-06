@@ -1,0 +1,82 @@
+.browser-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: $white;
+    margin: $medium;
+    padding: $medium;
+    margin-top: 0;
+    position: relative;
+    top: -$small;
+    height: calc(100vh - 48px);
+    border-radius: $small;
+    color: #000;
+
+    .browser-profile {
+        margin-right: $medium;
+
+        .profile-image {
+            min-width: $xLarge;
+            height: $xLarge;
+            background-color: $light;
+            border-radius: $xLarge;
+            margin-right: $small;
+            padding: $small;
+
+            .profile-icon {
+                color: $text-dark;
+                width: $medium;
+                height: $medium;
+            }
+        }
+    }
+
+    .browser-content {
+        flex-grow: 1;
+
+        .browser-name {
+            color: $text-light;
+        }
+
+        .browser-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .browser-title {
+                color: $text-primary;
+            }
+
+            .browser-header-options {
+                display: flex;
+                align-items: center;
+
+                .browser-date {
+                    color: $text-dark;
+                    margin-right: $medium;
+                }
+
+                .browser-important {
+                    border-radius: $massive;
+                    padding: $spacer;
+                    width: $large;
+                    height: $large;
+                    position: relative;
+                    top: -$small;
+                    left: $small;
+                    transition: 0.2s ease-in-out; 
+                    margin-right: $medium;
+            
+                    .important-icon {
+                        color: gold;
+                        width: $medium;
+                        height: $medium;
+                    }
+                }
+            
+                .browser-important:hover {
+                    background-color: $text-dark;
+                }
+            }
+        }
+    }
+}

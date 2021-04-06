@@ -1,0 +1,47 @@
+.navigation {
+    padding: 0 $medium;
+    margin-bottom: $large;
+
+    .navigation-content {
+        display: flex;
+        align-items: center;
+        margin-top: $small;
+
+        .navigation-links {
+            display: flex;
+            justify-content: left;
+            width: 100%;
+    
+            .link {
+                background: linear-gradient($body-color, $body-bg);
+                margin-right: $small;
+                width: $massive;
+                height: $massive;
+                border-radius: $small;
+                border: 1px solid $border;
+                padding: $medium;
+    
+                .icon-large {
+                    width: $large;
+                    height: $large;
+                    color: $white;
+                }
+            }
+        }
+    
+        .add-button {
+            background-color: $blue;
+            margin-left: $small;
+            width: $large;
+            height: $large;
+            border-radius: $small;
+            padding: $spacer;
+    
+            .icon-medium {
+                width: $medium;
+                height: $medium;
+                color: $white;
+            }
+        }
+    }
+}

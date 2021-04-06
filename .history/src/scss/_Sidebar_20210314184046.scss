@@ -1,0 +1,20 @@
+.sidebar-container {
+    display: grid;
+    background-color: $dark;
+    position: absolute;
+    justify-content: space-between;
+    width: 70px;
+    height: 100vh;
+    text-align: center;
+
+    .sidebar-main {
+        .sidebar-icon {
+            width: $large;
+            height: $large;
+            color: $text-dark;
+        }
+    }
+
+    .sidebar-user {
+    }
+}

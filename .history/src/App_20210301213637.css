@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600');
+body, html {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+h1 {
+  color: rgba( 255, 255, 255 );
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+}

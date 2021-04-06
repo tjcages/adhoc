@@ -1,0 +1,19 @@
+.grid_list {
+    display: 'flex';
+    flex-grow: 0.3;
+    height: '100vh';
+    background-color: orange;
+    transform: 'translateZ(0)'; // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+
+    .navigation_tile {
+        padding: 10px;
+    }
+}
+
+.titlebar {
+    background-color: black;
+}
+
+.icon {
+    color: white;
+}
