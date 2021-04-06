@@ -70,11 +70,7 @@ export default function Browser() {
             const fromHeader = response.result.messageHeaders.find(el => el.name.toUpperCase() === "FROM");
             let fromName = fromHeader ? getFromName(fromHeader.value) : "undefined";
 
-            if (readingStats !== undefined) {
-                return fromName + ' — ' + readingStats.text
-            } else {
-                return fromName
-            }
+            return fromName
         }
 
         return ""
@@ -89,7 +85,7 @@ export default function Browser() {
             </div>
             <div className="browser-content">
                 <h4 className="browser-name">
-                    { parseName(response) }
+                    { parseName(response) + readingStats !== undefined ? readingStats.text + ' — ' : '' }
                 </h4>
                 <div className="browser-header">
                     <h2 className="browser-title">
