@@ -1,0 +1,21 @@
+.website-container {
+    background-color: $robinhood;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: $medium;
+    margin-bottom: $small;
+    border-radius: $spacer;
+    cursor: pointer;
+    transition: 0.1s ease-in-out; 
+    opacity: 0.3;
+}
+
+.website-container:hover {
+    opacity: 1.0;
+}
+
+.website-selected {
+    background-color: $blue;
+    opacity: 1.0;
+}

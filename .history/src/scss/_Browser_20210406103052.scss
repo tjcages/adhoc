@@ -1,0 +1,138 @@
+.browser-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: $white;
+    margin-left: $medium;
+    padding: 0 $medium;
+    padding-top: $large;
+
+    position: relative;
+    top: -$small;
+    height: calc(100vh);
+    // border-radius: $small;
+    color: #000;
+
+    .browser-profile {
+        margin-right: $small;
+
+        .profile-image {
+            min-width: $xLarge;
+            height: $xLarge;
+            background-color: $light;
+            border-radius: $xLarge;
+            margin-right: $small;
+            padding: $small;
+
+            .profile-icon {
+                color: $text-dark;
+                width: $medium;
+                height: $medium;
+            }
+        }
+    }
+
+    .browser-content {
+        flex-grow: 1;
+        overflow: hidden;
+
+        .browser-name {
+            color: $text-light;
+        }
+
+        .browser-header {
+            display: flex;
+            justify-content: space-between;
+
+            .browser-title {
+                color: $text-primary;
+                margin-bottom: $small;
+            }
+
+            .browser-header-options {
+                display: flex;
+                vertical-align: top;
+                margin-left: $medium;
+
+                .browser-date {
+                    display: inline-block;
+                    width: max-content;
+                    height: $large;
+                    padding-top: $spacer;
+                    margin-right: $medium;
+
+                    .date-h4 {
+                        color: $text-dark;
+                        opacity: 0.6;
+                    }
+                }
+
+                .browser-important {
+                    border-radius: $massive;
+                    padding: $spacer;
+                    width: $large;
+                    height: $large;
+                    transition: 0.2s ease-in-out; 
+                    margin-right: $small;
+                    cursor: pointer;
+            
+                    .important-icon {
+                        color: $gold;
+                        width: $medium;
+                        height: $medium;
+                    }
+                }
+            
+                .browser-important:hover {
+                    background-color: $light-gold;
+                }
+
+                .browser-options {
+                    border-radius: $massive;
+                    padding: $spacer;
+                    width: $large;
+                    height: $large;
+                    transition: 0.2s ease-in-out; 
+                    cursor: pointer;
+            
+                    .options-icon {
+                        color: $text-dark;
+                        opacity: 0.6;
+                        width: $medium;
+                        height: $medium;
+                    }
+                }
+            
+                .browser-options:hover {
+                    background-color: $light;
+                }
+            }
+        }
+
+        .browser-tags {
+            display: flex;
+            margin-bottom: $medium;
+
+            .tag {
+                background-color: $light-green;
+                padding: 2px $spacer;
+                border-radius: 3px;
+                margin-right: $spacer;
+
+                .tag-title {
+                    color: $green;
+                }
+            }
+        }
+
+        .browser-message {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+
+            #message-iframe {
+                min-width: 100%;
+                min-height: 100%;
+            }
+        }
+    }
+}
