@@ -158,7 +158,7 @@ export class Navigation extends React.Component {
                 You have no new messages
               </div>
             ) : (
-              <ul style={{listStyleType: 'none', padding: 0}}>
+              <ul style={{textDecoration: 'none'}}>
                 <AnimatePresence initial={false}>
                   {this.renderMessages()}
                 </AnimatePresence>

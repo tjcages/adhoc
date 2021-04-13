@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators, compose } from "redux";
 import { withRouter } from 'react-router-dom';
-import { motion, AnimatePresence } from "framer-motion";
-
 import InboxItem from './InboxItem'
 
 import { 
@@ -98,6 +96,7 @@ export class Navigation extends React.Component {
     }
 
     const labels = this.props.labelsResult.labels.map(el => el.name.includes("CATEGORY_") ? el.name.replace("CATEGORY_", "") : null ).filter(el => el != null)
+    console.log(this.props.messagesResult.messages)
 
     return (
       labels.map((label) => { 
@@ -109,14 +108,7 @@ export class Navigation extends React.Component {
               {
                 messages.map((el, index) => {
                   return (
-                    <motion.li
-                      key={el.id}
-                      positionTransition
-                      initial={{ opacity: 0, y: 50, scale: 0.3 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
-                    >
-                      <InboxItem
+                    <InboxItem
                       data={el}
                       nextId={nextId}
                       key={el.id}
@@ -124,8 +116,7 @@ export class Navigation extends React.Component {
                       // onClick={this.getMessage}
                       onClick={() => this.selectInboxItem(el.id, index)} 
                       modifyMessage={() => this.modifyMessage(el.id, index)}
-                      />
-                    </motion.li>
+                    />
                   );
                 })
               }
@@ -158,11 +149,7 @@ export class Navigation extends React.Component {
                 You have no new messages
               </div>
             ) : (
-              <ul style={{listStyleType: 'none', padding: 0}}>
-                <AnimatePresence initial={false}>
-                  {this.renderMessages()}
-                </AnimatePresence>
-              </ul>
+              this.renderMessages()
             )
           }
           <div className="spacer" />

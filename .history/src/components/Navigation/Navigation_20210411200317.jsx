@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators, compose } from "redux";
 import { withRouter } from 'react-router-dom';
-import { motion, AnimatePresence } from "framer-motion";
-
 import InboxItem from './InboxItem'
 
 import { 
@@ -21,7 +19,6 @@ import { BiSearch } from "react-icons/bi";
 import { BsFilter } from "react-icons/bs";
 
 export class Navigation extends React.Component {
-
   constructor(props) {
     super(props)
 
@@ -29,6 +26,14 @@ export class Navigation extends React.Component {
     this.renderMessages = this.renderMessages.bind(this)
     this.selectInboxItem = this.selectInboxItem.bind(this)
     this.modifyMessage = this.modifyMessage.bind(this)
+  }
+
+  componentWillMount() {
+    document.addEventListener("keydown", this.onKeyPressed.bind(this));
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.onKeyPressed.bind(this));
   }      
   
   componentDidMount() {
@@ -36,6 +41,14 @@ export class Navigation extends React.Component {
     this.getMessages({labelIds: ["INBOX"]})
     const currentMessageId = this.props.location.pathname.replace('/inbox/', '')
     this.props.getEmailMessage(currentMessageId);
+  }
+
+  onKeyPressed(e) {
+    if (e.keyCode === 68) {
+      const pathname = this.props.history.location.pathname.replace('/inbox/', '')
+      console.log(pathname)
+    }
+    console.log(e.keyCode);
   }
 
   getMessages = ({
@@ -47,7 +60,7 @@ export class Navigation extends React.Component {
     this.props.getLabelMessages({ labelIds, maxResults: 20, q: q, pageToken })
   }
 
-  selectInboxItem(id, index) {
+  selectInboxItem(id) {
     this.props.history.push(`/inbox/${id}`);
 
     this.props.getEmailMessage(id);
@@ -81,13 +94,6 @@ export class Navigation extends React.Component {
       );
     }
 
-    // Automatically select the first element if url is /inbox
-    const id = this.props.history.location.pathname.replace('/inbox/', '');
-    const messages = this.props.messagesResult.messages.filter(el => el.id === id);
-    if (messages.length === 0) {
-      this.props.history.push('/inbox')
-    }
-
     const pathname = this.props.history.location.pathname
     if (pathname === "/inbox/" || pathname === "/inbox") {
       this.selectInboxItem(this.props.messagesResult.messages[0].id)
@@ -109,14 +115,7 @@ export class Navigation extends React.Component {
               {
                 messages.map((el, index) => {
                   return (
-                    <motion.li
-                      key={el.id}
-                      positionTransition
-                      initial={{ opacity: 0, y: 50, scale: 0.3 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
-                    >
-                      <InboxItem
+                    <InboxItem
                       data={el}
                       nextId={nextId}
                       key={el.id}
@@ -124,8 +123,7 @@ export class Navigation extends React.Component {
                       // onClick={this.getMessage}
                       onClick={() => this.selectInboxItem(el.id, index)} 
                       modifyMessage={() => this.modifyMessage(el.id, index)}
-                      />
-                    </motion.li>
+                    />
                   );
                 })
               }
@@ -158,11 +156,7 @@ export class Navigation extends React.Component {
                 You have no new messages
               </div>
             ) : (
-              <ul style={{listStyleType: 'none', padding: 0}}>
-                <AnimatePresence initial={false}>
-                  {this.renderMessages()}
-                </AnimatePresence>
-              </ul>
+              this.renderMessages()
             )
           }
           <div className="spacer" />

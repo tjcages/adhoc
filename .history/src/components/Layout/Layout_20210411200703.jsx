@@ -19,7 +19,6 @@ import {
   addInitialPageToken,
   clearPageTokens,
   setSearchQuery,
-  getEmailMessage,
   modifyMessages
 } from "../../actions/inbox-list.actions";
 
@@ -89,7 +88,6 @@ export class Layout extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  emailMessageResult: state.emailMessageResult,
   labelsResult: state.labelsResult,
   messagesResult: state.messagesResult,
   pageTokens: state.pageTokens,
@@ -108,7 +106,6 @@ const mapDispatchToProps = dispatch =>
       addInitialPageToken,
       clearPageTokens,
       setSearchQuery,
-      getEmailMessage,
       modifyMessages
     },
     dispatch

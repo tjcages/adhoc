@@ -33,6 +33,7 @@ export class AppContainer extends Component {
   }
 
   componentDidMount() {
+    console.log('mounting')
     mountScripts().then(this.init);
   }
 
@@ -69,16 +70,12 @@ export class AppContainer extends Component {
     const { signInStatus } = this.state;
 
     if (signInStatus === AUTH_SUCCESS) {
-      if (!this.props.location.pathname.includes("/inbox")) {
-        this.props.history.push(`/inbox/`);
-      }
+      this.props.history.push(`/inbox/`);
       return <Layout googleUser={this.state.googleUser} />;
     } else if (signInStatus === AUTH_IN_PROGRESS) {
       return <Authenticating />;
     } else {
-      if (this.props.location.pathname !== "/login") {
-        this.props.history.push(`/login`);
-      }
+      this.props.history.push(`/login`);
       return <Login onSignIn={this.onSignIn} />;
     }
   }

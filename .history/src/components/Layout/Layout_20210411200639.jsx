@@ -19,7 +19,6 @@ import {
   addInitialPageToken,
   clearPageTokens,
   setSearchQuery,
-  getEmailMessage,
   modifyMessages
 } from "../../actions/inbox-list.actions";
 
@@ -28,14 +27,6 @@ export class Layout extends React.Component {
     super(props);
     
     this.onSignout = this.onSignout.bind(this);
-  }
-
-  componentWillMount() {
-    document.addEventListener("keydown", this.onKeyPressed.bind(this));
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.onKeyPressed.bind(this));
   }
 
   onSignout() {
@@ -89,7 +80,6 @@ export class Layout extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  emailMessageResult: state.emailMessageResult,
   labelsResult: state.labelsResult,
   messagesResult: state.messagesResult,
   pageTokens: state.pageTokens,
@@ -108,7 +98,6 @@ const mapDispatchToProps = dispatch =>
       addInitialPageToken,
       clearPageTokens,
       setSearchQuery,
-      getEmailMessage,
       modifyMessages
     },
     dispatch

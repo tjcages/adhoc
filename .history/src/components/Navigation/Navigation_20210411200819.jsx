@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators, compose } from "redux";
 import { withRouter } from 'react-router-dom';
-import { motion, AnimatePresence } from "framer-motion";
-
 import InboxItem from './InboxItem'
 
 import { 
@@ -21,9 +19,12 @@ import { BiSearch } from "react-icons/bi";
 import { BsFilter } from "react-icons/bs";
 
 export class Navigation extends React.Component {
-
   constructor(props) {
     super(props)
+
+    this.state = {
+      selectedIndex: 0,
+    }
 
     this.getMessages = this.getMessages.bind(this)
     this.renderMessages = this.renderMessages.bind(this)
@@ -47,7 +48,7 @@ export class Navigation extends React.Component {
     this.props.getLabelMessages({ labelIds, maxResults: 20, q: q, pageToken })
   }
 
-  selectInboxItem(id, index) {
+  selectInboxItem(id) {
     this.props.history.push(`/inbox/${id}`);
 
     this.props.getEmailMessage(id);
@@ -68,6 +69,10 @@ export class Navigation extends React.Component {
       // Push back to Inbox after 0.6 sec
       setTimeout(() => {  this.props.history.push(`/inbox/`) }, 600);
     }
+
+    this.setState({
+      selectedIndex: index
+    })
   }
 
   renderMessages() {
@@ -79,13 +84,6 @@ export class Navigation extends React.Component {
           There are no messages with this label.
         </div>
       );
-    }
-
-    // Automatically select the first element if url is /inbox
-    const id = this.props.history.location.pathname.replace('/inbox/', '');
-    const messages = this.props.messagesResult.messages.filter(el => el.id === id);
-    if (messages.length === 0) {
-      this.props.history.push('/inbox')
     }
 
     const pathname = this.props.history.location.pathname
@@ -109,14 +107,7 @@ export class Navigation extends React.Component {
               {
                 messages.map((el, index) => {
                   return (
-                    <motion.li
-                      key={el.id}
-                      positionTransition
-                      initial={{ opacity: 0, y: 50, scale: 0.3 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
-                    >
-                      <InboxItem
+                    <InboxItem
                       data={el}
                       nextId={nextId}
                       key={el.id}
@@ -124,8 +115,7 @@ export class Navigation extends React.Component {
                       // onClick={this.getMessage}
                       onClick={() => this.selectInboxItem(el.id, index)} 
                       modifyMessage={() => this.modifyMessage(el.id, index)}
-                      />
-                    </motion.li>
+                    />
                   );
                 })
               }
@@ -158,11 +148,7 @@ export class Navigation extends React.Component {
                 You have no new messages
               </div>
             ) : (
-              <ul style={{listStyleType: 'none', padding: 0}}>
-                <AnimatePresence initial={false}>
-                  {this.renderMessages()}
-                </AnimatePresence>
-              </ul>
+              this.renderMessages()
             )
           }
           <div className="spacer" />

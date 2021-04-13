@@ -76,6 +76,7 @@ export class AppContainer extends Component {
     } else if (signInStatus === AUTH_IN_PROGRESS) {
       return <Authenticating />;
     } else {
+      console.log('login')
       if (this.props.location.pathname !== "/login") {
         this.props.history.push(`/login`);
       }

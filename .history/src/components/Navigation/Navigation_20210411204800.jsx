@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators, compose } from "redux";
 import { withRouter } from 'react-router-dom';
-import { motion, AnimatePresence } from "framer-motion";
-
 import InboxItem from './InboxItem'
 
 import { 
@@ -91,6 +89,11 @@ export class Navigation extends React.Component {
     const pathname = this.props.history.location.pathname
     if (pathname === "/inbox/" || pathname === "/inbox") {
       this.selectInboxItem(this.props.messagesResult.messages[0].id)
+      console.log('should scroll')
+      // this.refs[id].current.scrollIntoView({
+      //   behavior: 'smooth',
+      //   block: 'start',
+      // });
     }
     var nextId = ""
     if (this.props.messagesResult.messages.length > 1) {
@@ -109,14 +112,7 @@ export class Navigation extends React.Component {
               {
                 messages.map((el, index) => {
                   return (
-                    <motion.li
-                      key={el.id}
-                      positionTransition
-                      initial={{ opacity: 0, y: 50, scale: 0.3 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
-                    >
-                      <InboxItem
+                    <InboxItem
                       data={el}
                       nextId={nextId}
                       key={el.id}
@@ -124,8 +120,7 @@ export class Navigation extends React.Component {
                       // onClick={this.getMessage}
                       onClick={() => this.selectInboxItem(el.id, index)} 
                       modifyMessage={() => this.modifyMessage(el.id, index)}
-                      />
-                    </motion.li>
+                    />
                   );
                 })
               }
@@ -158,11 +153,7 @@ export class Navigation extends React.Component {
                 You have no new messages
               </div>
             ) : (
-              <ul style={{listStyleType: 'none', padding: 0}}>
-                <AnimatePresence initial={false}>
-                  {this.renderMessages()}
-                </AnimatePresence>
-              </ul>
+              this.renderMessages()
             )
           }
           <div className="spacer" />

@@ -16,7 +16,7 @@
     "cors": "^2.8.5",
     "css-loader": "^4.3.0",
     "electron-window-state": "^5.0.3",
-    "framer-motion": "^3.10.0",
+    "framer-motion": "^3.10.6",
     "googleapis": "^70.0.0",
     "moment": "^2.29.1",
     "react": "^17.0.1",

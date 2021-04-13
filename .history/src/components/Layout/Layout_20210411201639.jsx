@@ -19,13 +19,17 @@ import {
   addInitialPageToken,
   clearPageTokens,
   setSearchQuery,
-  getEmailMessage,
+  getEmailMessage
   modifyMessages
 } from "../../actions/inbox-list.actions";
 
 export class Layout extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      selectedIndex: 0,
+    }
     
     this.onSignout = this.onSignout.bind(this);
   }
@@ -46,9 +50,24 @@ export class Layout extends React.Component {
   }
 
   onKeyPressed(e) {
+    console.log(e.keyCode)
+    console.log(this.state.selectedIndex)
     if (e.keyCode === 68) {
       const id = this.props.history.location.pathname.replace('/inbox/', '')
       this.props.modifyMessages({ ids: [id], addLabelIds: [], removeLabelIds: ["INBOX"] }) // Might want to modify INBOX later
+
+      var nextId = undefined
+      if (this.state.selectedIndex < this.props.messagesResult.messages.length - 1) {
+        nextId = this.props.messagesResult.messages[this.state.selectedIndex + 1].id
+      }
+  
+      if (nextId !== undefined) {
+        this.props.history.push(`/inbox/${nextId}`);
+        this.props.getEmailMessage(nextId);
+      } else {
+        // Push back to Inbox after 0.6 sec
+        setTimeout(() => {  this.props.history.push(`/inbox/`) }, 600);
+      }
     }
   }
 
@@ -71,6 +90,7 @@ export class Layout extends React.Component {
             addInitialPageToken={this.addInitialPageToken}
             parentLabel={this.props.labelsResult.labels.find(el => el.id === this.props.match.path.slice(1) )}
             searchQuery={this.props.searchQuery}
+            selectedIndex={this.state.selectedIndex}
           />
         </div>
         <div className="layout-browser">
@@ -89,7 +109,6 @@ export class Layout extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  emailMessageResult: state.emailMessageResult,
   labelsResult: state.labelsResult,
   messagesResult: state.messagesResult,
   pageTokens: state.pageTokens,
@@ -108,7 +127,7 @@ const mapDispatchToProps = dispatch =>
       addInitialPageToken,
       clearPageTokens,
       setSearchQuery,
-      getEmailMessage,
+      getEmailMessage
       modifyMessages
     },
     dispatch

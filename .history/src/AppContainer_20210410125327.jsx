@@ -69,14 +69,15 @@ export class AppContainer extends Component {
     const { signInStatus } = this.state;
 
     if (signInStatus === AUTH_SUCCESS) {
-      if (!this.props.location.pathname.includes("/inbox")) {
-        this.props.history.push(`/inbox/`);
-      }
+      console.log('success')
+      this.props.history.push(`/inbox/`);
       return <Layout googleUser={this.state.googleUser} />;
     } else if (signInStatus === AUTH_IN_PROGRESS) {
       return <Authenticating />;
     } else {
+      console.log('login')
       if (this.props.location.pathname !== "/login") {
+        console.log('actually login')
         this.props.history.push(`/login`);
       }
       return <Login onSignIn={this.onSignIn} />;
