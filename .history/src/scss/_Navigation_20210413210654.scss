@@ -1,0 +1,71 @@
+.navigation-container {
+    padding-bottom: $xLarge;
+    padding-left: $medium;
+    padding-right: 0;
+    width: 100%;
+
+    .navigation-header {
+        display: flex;
+        justify-content: space-between;
+        
+        .navigation-search {
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            background-color: $dark;
+            border-radius: $massive;
+            padding: $spacer $small;
+            margin-right: $small;
+
+            .navigation-subtext {
+                color: $text-dark;
+                padding-left: $spacer;
+            }
+        }
+
+        .navigation-filter {
+            background-color: $dark;
+            border-radius: $massive;
+            padding: $spacer;
+            width: $large;
+            height: $large;
+        }
+    }
+
+    .navigation-icon {
+        width: $medium;
+        height: $medium;
+        color: $text-dark;
+    }
+
+    .navigation-content {
+        display: inline-block;
+        max-height: 100vh;
+        flex-grow: 1;
+        scroll-behavior: smooth;
+        overflow: auto;
+        padding-top: $medium;
+
+        .navigation-list-header {
+            margin-bottom: $medium;
+        }
+
+        .small-spacer {
+            margin-bottom: $large;
+        }
+    }
+}
+
+.spacer {
+    height: $massive;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
