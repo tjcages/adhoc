@@ -1,0 +1,9 @@
+.reply-bar {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  padding: $medium 0;
+  background-color: red;
+  bottom: 0;
+  position: absolute;
+}
