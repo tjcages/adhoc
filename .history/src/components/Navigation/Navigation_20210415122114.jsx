@@ -145,7 +145,7 @@ export class Navigation extends React.Component {
         <div className="navigation-header">
           <div className="navigation-search">
             <BiSearch className="navigation-icon" />
-            <h4 className="navigation-subtext h4">Search</h4>
+            <h4 className="navigation-subtext">Search</h4>
           </div>
           <div className="navigation-filter">
             <BsFilter className="navigation-icon" />          

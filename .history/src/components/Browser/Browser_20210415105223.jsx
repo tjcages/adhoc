@@ -48,15 +48,17 @@ export class Browser extends React.Component {
         if (!emailMessageResult.loading) {
             if (!emailMessageResult.failed) {
                 if (this.iframeRef.current) {
-                    const { body } = this.iframeRef.current.contentWindow.document;
-                    body.style.margin = "0px";
-                    // body.style.fontFamily = "CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif";
-                    body.style.fontFamily = "Roboto, sans-serif";
-                    body.style.fontWeight = "400";
-                    body.style.fontSize = "50px";
+                    const { body } = this.iframeRef.current;
+                    // body.style.margin = "0px";
+                    // // body.style.fontFamily = "CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif";
+                    // body.style.fontFamily = "Roboto, sans-serif";
+                    // body.style.fontWeight = "400";
+                    // body.style.fontSize = "14px";
                     body.innerHTML = this.props.emailMessageResult.body;
 
-                    this.iframeRef.current.height = body.scrollHeight
+                    var clean = DOMPurify.sanitize(this.props.emailMessageResult.body)
+                    document.getElementById('sanitized').innerHTML = clean;
+                    // this.iframeRef.current.height = body.scrollHeight
                 }
             } else {
                 if (!this.state.errorMessage) {
@@ -93,16 +95,16 @@ export class Browser extends React.Component {
                     </div>
                 </div>
                 <div className="browser-content" style={{top: -this.state.scrollY}}>
-                    <h4 className="browser-name h4">
+                    <h4 className="browser-name">
                         { fromName }
                     </h4>
                     <div className="browser-header">
-                        <h2 className="browser-title h2">
+                        <h2 className="browser-title">
                             { subject }
                         </h2>
                         <div className="browser-header-options">
                             <div className="browser-date">
-                                <h4 className="date-h4 h4">
+                                <h4 className="date-h4">
                                     { formattedDate }
                                 </h4>
                             </div>
@@ -118,7 +120,7 @@ export class Browser extends React.Component {
                         {
                             tags.map(tag => (
                                 <div className={tag==="INBOX" ? "tag blue" : "tag"} key={tag}>
-                                    <p className={tag==="INBOX" ? "tag-title blue p" : "tag-title p"}>
+                                    <p className={tag==="INBOX" ? "tag-title blue" : "tag-title"}>
                                         {tag.toLowerCase().replace('category_','')}
                                     </p>
                                 </div>
@@ -126,9 +128,10 @@ export class Browser extends React.Component {
                         }
                     </div>
                     <div>
-                      <div className="message-iframe"
-                      style={{textSize: '40px'}} 
-                      dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(this.props.emailMessageResult.body, { ADD_ATTR: ['target', 'style'] })}}
+                      <div className="message-iframe" 
+                      // id="sanitized"
+                      ref={this.iframeRef}
+                      // dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(this.props.emailMessageResult.body)}}
                       ></div>
                       {/* <iframe
                         ref={this.iframeRef}
