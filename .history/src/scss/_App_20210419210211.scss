@@ -1,0 +1,190 @@
+// @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600');
+@import url("https://use.typekit.net/dvw1ujn.css");
+
+html {
+  margin: 0px;
+  padding: 0px !important;
+  background: $body-bg;
+  // font-size: 20px;
+}
+
+body {
+  font-family: aileron, 'Poppins', sans-serif !important;
+  margin: 0px; 
+  padding: 0px;
+  background: rgb( 18, 17, 20 );
+  // color: rgb( 255, 255, 255 );
+  overflow: hidden;
+}
+
+a {
+  color: $blue
+}
+
+// Need to make these classes as to not modify email content
+.h1 {
+  margin: 0;
+  padding: 0;
+  font-size: $text-header;
+  line-height: $text-header;
+  font-weight: 500;
+}
+
+.h2 {
+  margin: 0;
+  padding: 0;
+  font-size: $text-subheader;
+  line-height: $text-subheader;
+  font-weight: 500;
+  line-height: $text-header;
+}
+
+.h3 {
+  margin: 0;
+  padding: 0;
+  font-size: $text-large;
+  line-height: $text-subheader;
+  font-weight: 400;
+}
+
+.h4 {
+  margin: 0;
+  padding: 0;
+  font-size: $text-medium;
+  line-height: $text-large;
+  font-weight: 400;
+}
+
+.h5 {
+  margin: 0;
+  padding: 0;
+  font-size: $text-small;
+  line-height: $text-medium;
+  font-weight: 400;
+}
+
+.p {
+  margin: 0;
+  padding: 0;
+  font-size: $text-xSmall;
+  line-height: $text-small;
+  font-weight: 400;
+}
+
+
+
+
+
+
+// Colors
+$primary: #0F2E53;
+$secondary: #EDEDED;
+$tertiary: #F5F6FB;
+$text: #484848;
+$error: #ff0033;
+
+// Fonts
+$accent: "Nunito Sans", Arial, sans-serif;
+$regular: "Roboto", Arial, sans-serif;
+
+// Sizes
+$max-width: 720px;
+
+// Others
+$box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
+
+* {
+  box-sizing: border-box;
+}
+
+// html {
+//   width: 100%;
+//   height: 100%;
+// }
+
+// body {
+//   margin: 0;
+//   padding: 0;
+//   width: 100%;
+//   height: 100%;
+//   font-family: $regular;
+//   font-size: 1rem;
+//   color: $text;
+// }
+
+#__next {
+  height: 100%;
+}
+
+#layoutRoot {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  justify-items: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 0.125rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.125rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1.pageHeading {
+  color: $primary;
+  margin-bottom: 3rem;
+}
+
+form {
+  button {
+    width: auto;
+    min-width: 9rem;
+    height: 2.6rem;
+    margin: 2rem 1rem 3rem 0;
+    padding: 0 1rem;
+    background: $secondary;
+    color: $primary;
+    border: none;
+    border-radius: 0.5rem;
+    color: $primary;
+    font-family: $accent;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  button:first-of-type {
+    background: $primary;
+    color: #ffffff;
+  }
+  button:hover,
+  button:focus {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+// Fonts
+$font-family-serif: "Open Sans", serif;
+$font-family-sans-serif: "Montserrat", "Open Sans", sans-serif;
+$font-family-font-awesome: 'Font Awesome 5 Pro';
+$font-family-font-awesome-brands: 'Font Awesome 5 Brands';
+$Roboto-condensed: "Roboto Condensed", sans-serif;
+$Roboto: "Roboto", sans-serif;
+
+// Colors
+// Primary
+$primary:                               #FF5454;
+$secondary:                             #606975;
+$dark:                                  #1E1E1F;
+$light:                                 #f8f8f8;
+$gray:                                  #2F2F30;
+$white:                                 #ffffff;
+$text-primary:                          #1B1A1A;
+$text-dark:                             #747475;
+$text-light:                            #70798c;
+$border:                                #5A5A5A;
+
+// Secondary
+$blue:                                  #2881E2;
+$light-blue:                            #d2e5f9;
+$green:                                 #569F89;
+$light-green:                           #d4e8e2;
+$gold:                                  #ECAB32;
+$light-gold:                            #fbeed5;
+
+$robinhood:                             #00c707;
+$robinhood_light:                       #005203;
+
+// Body
+$body-bg:                               #000000;
+$body-color:                            #272727;
+
+// Sizes
+$spacer:                                6px;
+$small:                                 12px;
+$medium:                                24px;
+$large:                                 36px;  
+$xLarge:                                48px;
+$massive:                               86px;
+
+// Text sizes
+$text-xSmall:                           12px;
+$text-small:                            14px;
+$text-medium:                           16px;
+$text-large:                            18px;  
+$text-subheader:                        24px;
+$text-header:                           32px;
+
+// Links
+$link-color:                            $text-dark;
+$link-decoration:                       none;
+$link-hover-color:                      $primary;
+$link-hover-decoration:                 none;

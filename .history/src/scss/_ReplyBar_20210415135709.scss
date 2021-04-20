@@ -1,0 +1,68 @@
+.reply-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: $small $medium;
+  width: calc(65vw - 86px);
+  position: absolute;
+  bottom: 0;
+  right: 86px;
+  z-index: 10;
+
+  background: rgba( 255, 255, 255, 0.9 );
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 20px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  backdrop-filter: blur( 5.5px );
+  -webkit-backdrop-filter: blur( 5.5px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  .reply-button {
+    text-align: center;
+    padding: 15px;
+    width: 200px;
+    height: 56px;
+    background-color: $blue;
+    border-radius: $massive;
+    margin-left: $small;
+    opacity: 0.8;
+    transition: 0.2s ease-in-out; 
+    cursor: pointer;
+
+    .reply-button-text {
+      color: $white;
+    }
+  }
+
+  .reply-button:hover {
+    opacity: 1;
+  }
+
+  .reply-done {
+    border-radius: $large;
+    padding: 8px;
+    margin-top: 4px;
+    width: 48px;
+    height: 48px;
+    transition: 0.2s ease-in-out; 
+    margin-right: $small;
+    border-style: solid;
+    border-width: 2px;
+    border-color: $blue;
+    cursor: pointer;
+
+    .reply-icon {
+      width: 32px;
+      height: 32px;
+      color: $blue;
+      transition: 0.2s ease-in-out; 
+    }
+  }
+
+  .reply-done:hover {
+    background-color: $blue;
+    opacity: 0.8;
+    
+    .reply-icon {
+      color: $light-blue;
+    }
+}
+}

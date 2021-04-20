@@ -1,0 +1,88 @@
+// Colors
+$primary: #0F2E53;
+$secondary: #EDEDED;
+$tertiary: #F5F6FB;
+$text: #484848;
+$error: #ff0033;
+
+// Fonts
+$accent: "Nunito Sans", Arial, sans-serif;
+$regular: "Roboto", Arial, sans-serif;
+
+// Sizes
+$max-width: 720px;
+
+// Others
+$box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
+
+
+
+.block {
+  padding: 0.25rem;
+  // Better support for safari
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.block:focus,
+.isDragging,
+.blockSelected {
+  background: $tertiary;
+  outline-color: $tertiary;
+  & ~ .dragHandle {
+    opacity: 1;
+  }
+}
+
+.placeholder {
+  color: rgba(72, 72, 72, 0.25);
+}
+
+.draggable .block {
+  display: inline-block;
+  width: calc(100% - 1rem);
+}
+
+.draggable:hover {
+  .block {
+    background: #fafafa;
+    outline-color: $tertiary;
+  }
+  .dragHandle {
+    opacity: 1;
+  }
+}
+
+.dragHandle {
+  opacity: 0;
+  display: inline-block;
+  width: 1rem;
+  img {
+    display: block;
+    margin: auto;
+  }
+}
+
+.image {
+  display: inline-block;
+  width: calc(100% - 1rem);
+  padding: 0.25rem;
+  img {
+    display: block;
+    max-height: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.blockSelected.image {
+  opacity: 0.75;
+}
+
+.fileInputLabel {
+  display: block;
+  padding: 0.5rem 0.25rem;
+  color: #888888;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
