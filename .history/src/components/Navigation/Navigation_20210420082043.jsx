@@ -97,7 +97,7 @@ export class Navigation extends React.Component {
       nextId = this.props.messagesResult.messages[1].id
     }
 
-    // const labels = this.props.labelsResult.labels.map(el => el.name.includes("CATEGORY_") ? el.name.replace("CATEGORY_", "") : null ).filter(el => el != null)
+    const labels = this.props.labelsResult.labels.map(el => el.name.includes("CATEGORY_") ? el.name.replace("CATEGORY_", "") : null ).filter(el => el != null)
 
     return (
       this.props.messagesResult.messages.map((el, index) => {

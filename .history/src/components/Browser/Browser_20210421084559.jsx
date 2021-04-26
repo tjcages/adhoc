@@ -33,41 +33,41 @@ export class Browser extends React.Component {
         this.renderSpinner = this.renderSpinner.bind(this)
     }
 
-    // componentDidUpdate(prevProps) {
-    //     const { emailMessageResult } = this.props;
+    componentDidUpdate(prevProps) {
+        const { emailMessageResult } = this.props;
 
-    //     const result = emailMessageResult.result
-    //     if (result !== undefined) {
-    //         const label = emailMessageResult.result.labelIds.find((el) => el === "UNREAD")
-    //         const id = emailMessageResult.result.id
-    //         if (label === "UNREAD") {
-    //             this.props.modifyMessages({ ids: [id], addLabelIds: [], removeLabelIds: ["UNREAD"] })
-    //         }
-    //     }
+        const result = emailMessageResult.result
+        if (result !== undefined) {
+            const label = emailMessageResult.result.labelIds.find((el) => el === "UNREAD")
+            const id = emailMessageResult.result.id
+            if (label === "UNREAD") {
+                this.props.modifyMessages({ ids: [id], addLabelIds: [], removeLabelIds: ["UNREAD"] })
+            }
+        }
 
-    //     if (!emailMessageResult.loading) {
-    //         if (!emailMessageResult.failed) {
-    //             if (this.iframeRef.current) {
-    //                 const { body } = this.iframeRef.current.contentWindow.document;
-    //                 body.style.margin = "0px";
-    //                 // body.style.fontFamily = "CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif";
-    //                 body.style.fontFamily = "Roboto, sans-serif";
-    //                 body.style.fontWeight = "400";
-    //                 body.style.fontSize = "50px";
-    //                 body.innerHTML = this.props.emailMessageResult.body;
+        if (!emailMessageResult.loading) {
+            if (!emailMessageResult.failed) {
+                if (this.iframeRef.current) {
+                    const { body } = this.iframeRef.current.contentWindow.document;
+                    body.style.margin = "0px";
+                    // body.style.fontFamily = "CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif";
+                    body.style.fontFamily = "Roboto, sans-serif";
+                    body.style.fontWeight = "400";
+                    body.style.fontSize = "50px";
+                    body.innerHTML = this.props.emailMessageResult.body;
 
-    //                 this.iframeRef.current.height = body.scrollHeight
-    //             }
-    //         } else {
-    //             if (!this.state.errorMessage) {
-    //                 this.setState({
-    //                 errorMessage: emailMessageResult.error.result.error.message,
-    //                 modal: true
-    //                 });
-    //             }
-    //         }
-    //     }
-    // }
+                    this.iframeRef.current.height = body.scrollHeight
+                }
+            } else {
+                if (!this.state.errorMessage) {
+                    this.setState({
+                    errorMessage: emailMessageResult.error.result.error.message,
+                    modal: true
+                    });
+                }
+            }
+        }
+    }
 
     renderMessage(message) {
         const receivedHeader = message.payload.headers.find(el => el.name.toUpperCase() === "X-RECEIVED");
