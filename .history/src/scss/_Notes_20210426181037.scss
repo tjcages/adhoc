@@ -1,0 +1,15 @@
+.notes-container {
+  display: flex;
+  flex-direction: row;
+  justify-items: space-between;
+
+  .notes-main {
+    flex-grow: 1;
+    background-color: red;
+
+  }
+
+  .notes-footer {
+    background-color: blue;
+  }
+}

@@ -1,0 +1,85 @@
+.browser-container {
+  display: flex;
+  overflow: auto;
+  height: 100vh;
+  justify-content: space-between;
+  background-color: $white;
+  color: #000;
+
+  .browser-spinner {
+      color: $text-light;
+      opacity: 0.4;
+  }
+
+  .browser-content {
+    display: flex;
+    overflow: auto;
+    flex-grow: 1;
+    flex-direction: column;
+    padding-right: $medium;
+    padding-bottom: $massive;
+
+    .browser-header {
+      display: flex;
+      flex-direction: column;
+
+      .profile-image {
+        min-width: $xLarge;
+        height: $xLarge;
+        background-color: $light;
+        border-radius: $xLarge;
+        margin-right: $small;
+        padding: $small;
+
+        .profile-icon {
+          color: $text-dark;
+          width: $medium;
+          height: $medium;
+        }
+      }
+
+      .browser-titles {
+        display: flex;
+        justify-content: space-between;
+
+        .browser-title {
+            color: $text-primary;
+            margin-bottom: $small;
+        }
+
+        .browser-name {
+          color: $text-light;
+          margin-top: $medium;
+        }
+      }
+
+      .browser-tags {
+        display: flex;
+        margin-bottom: $medium;
+
+        .tag {
+            background-color: $light-green;
+            padding: 2px $spacer;
+            border-radius: 3px;
+            margin-right: $spacer;
+
+            .tag-title {
+                color: $green;
+            }
+
+            .blue {
+                color: $blue;
+            }
+        }
+
+        .blue {
+            background-color: $light-blue;
+        }
+      } 
+    }
+
+    #message-iframe {
+      min-width: 100%;
+    }
+  }
+}

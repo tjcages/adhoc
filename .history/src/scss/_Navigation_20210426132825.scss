@@ -1,0 +1,96 @@
+.navigation-container {
+  background-color: $body-bg;
+  padding-bottom: $xLarge;
+  padding-left: $medium;
+  width: 100%;
+
+  .navigation-header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: $medium;
+
+    .navigation-workspace {
+      display: flex;
+      flex-direction: row;
+
+      .navigation-workspace-title {
+        color: $white;
+        margin: auto;
+        margin-left: $small;
+      }
+
+      .navigation-workspace-icon {
+        background-color: $blue;
+        border-radius: $xLarge;
+        width: 32px;
+        height: 32px;
+      }
+    }
+    
+    .navigation-search {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      background-color: $dark;
+      border-radius: $massive;
+      padding: $spacer $small;
+      margin-right: $small;
+
+      .navigation-subtext {
+        color: $text-dark;
+        padding-left: $spacer;
+      }
+    }
+
+    .navigation-filter {
+      background-color: $dark;
+      border-radius: $massive;
+      padding: $spacer;
+      width: $large;
+      height: $large;
+    }
+  }
+
+  .navigation-icon {
+    width: $medium;
+    height: $medium;
+    color: $text-dark;
+  }
+
+  .navigation-content {
+    display: inline-block;
+    max-height: 100vh;
+    width: 100%;
+    scroll-behavior: smooth;
+    overflow: auto;
+    padding-top: $medium;
+    padding-right: $medium;
+
+    .navigation-list-header {
+        margin-bottom: $medium;
+    }
+
+    .navigation-no-messages {
+      color: $white;
+      font-weight: 200;
+    }
+
+    .small-spacer {
+      margin-bottom: $large;
+    }
+  }
+}
+
+.spacer {
+  height: $massive;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}

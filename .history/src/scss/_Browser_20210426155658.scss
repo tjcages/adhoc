@@ -1,0 +1,87 @@
+.browser-container {
+  display: flex;
+  overflow: auto;
+  height: 100vh;
+  justify-content: space-between;
+  background-color: $white;
+  color: #000;
+
+  .browser-spinner {
+      color: $text-light;
+      opacity: 0.4;
+  }
+
+  .browser-content {
+    display: flex;
+    overflow: auto;
+    flex-grow: 1;
+    flex-direction: column;
+    padding-left: $large;
+    padding-right: $large;
+    padding-bottom: $massive;
+    padding-top: $medium;
+
+    .browser-header {
+      display: flex;
+      flex-direction: row;
+
+      .profile-image {
+        max-width: $xLarge;
+        height: $xLarge;
+        background-color: $light;
+        border-radius: $small;
+        padding: $small;
+        box-shadow: 0 0 0 1px $light2;
+
+        .profile-icon {
+          color: $light3;
+          width: $medium;
+          height: $medium;
+        }
+      }
+
+      .browser-titles {
+        display: flex;
+        flex-direction: column;
+        margin-left: $medium;
+
+        .browser-name {
+          color: $text-light;
+        }
+
+        .browser-title {
+          color: $text-primary;
+          margin-bottom: $small;
+        }
+      }
+    }
+
+    .browser-tags {
+      display: flex;
+      margin-bottom: $medium;
+
+      .tag {
+        background-color: $tag-green;
+        padding: 4px 8px;
+        border-radius: $small;
+        margin-right: $spacer;
+
+        .tag-title {
+          color: $body-bg;
+        }
+
+        .blue {
+          color: $white;
+        }
+      }
+
+      .blue {
+          background-color: $tag-purple;
+      }
+    } 
+
+    #message-iframe {
+      min-width: 100%;
+    }
+  }
+}

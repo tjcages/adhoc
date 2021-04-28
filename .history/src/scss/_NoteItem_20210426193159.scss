@@ -1,0 +1,87 @@
+.note-container {
+  background-color: $dark;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: $medium;
+  margin-bottom: $small;
+  margin-left: 1px;
+  border-radius: $spacer;
+  cursor: pointer;
+  transition: 0.1s ease-in-out; 
+  top: 25px;
+
+  .note-content {
+    flex-grow: 1;
+    margin-right: $spacer;
+
+    .note-items {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: $small;
+
+      .note-h4 {
+        color: $white;
+        margin-right: $medium;
+        opacity: 0.4;
+      }  
+
+      .selected {
+        opacity: 1;
+        outline: none;
+        background-color: red;
+      }
+    }
+
+    .note-h4 {
+      display: flex;
+      color: $white;
+      margin-bottom: $spacer;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .note-h5 {
+      color: $white;
+      opacity: 0.8;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+
+    .note-p {
+      color: $text-dark;
+    }
+
+    .selected {
+      color: $white;
+      opacity: 0.5;
+    }
+  }
+
+  .note-options {
+    border-radius: $massive;
+    padding: $spacer;
+    width: $large;
+    height: $large;
+    color: $text-dark;
+    position: relative;
+    top: -$small;
+    left: $small;
+    box-shadow: none;
+    transition: 0.2s ease-in-out; 
+
+    .note-icon {
+      width: $medium;
+      height: $medium;
+    }
+  }
+
+  .note-options:hover {
+    background-color: $text-dark;
+    color: $white;
+  }
+}

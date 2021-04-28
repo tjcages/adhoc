@@ -1,0 +1,57 @@
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: $medium;
+
+  .notes-main {
+    flex-grow: 1;
+    background-color: red;
+  }
+
+  .notes-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: $small;
+
+    .navigation-icon {
+      width: $medium;
+      height: $medium;
+      color: $text-dark;
+      margin: auto 0;
+      cursor: pointer;
+    }
+    
+    .navigation-options {
+      display: flex;
+      flex-direction: row;
+      margin: auto 0;
+
+      .navigation-icon {
+        width: $medium;
+        height: $medium;
+        color: $text-dark;
+        margin: auto 0;
+        margin-left: $medium;
+        cursor: pointer;
+      }
+
+      .navigation-add {
+        padding: 8px 20px;
+        background-color: $white;
+        border-radius: $small;
+        margin-left: $medium;
+        cursor: pointer;
+        
+        .navigation-add-icon {
+          width: 20px;
+          height: 20px;
+          color: $body-bg;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+}

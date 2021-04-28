@@ -1,0 +1,14 @@
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: space-between;
+
+  .notes-main {
+    flex-grow: 1;
+
+  }
+
+  .notes-footer {
+
+  }
+}

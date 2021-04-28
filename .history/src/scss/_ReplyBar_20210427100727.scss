@@ -1,0 +1,98 @@
+.reply-bar {
+  padding: $small $medium;
+
+  z-index: 10;
+  transition: 0.2s ease-in-out;
+
+  background: rgba( 255, 255, 255, 0.9 );
+  box-shadow: $box-shadow;
+  backdrop-filter: blur( 5.5px );
+  -webkit-backdrop-filter: blur( 5.5px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  .reply-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: $small;
+
+    .browser-profile {
+      margin-right: $small;
+
+      .profile-image {
+        min-width: $xLarge;
+        height: $xLarge;
+        background-color: $light;
+        border-radius: $xLarge;
+        margin-right: $small;
+        padding: $small;
+
+        .profile-icon {
+          color: $text-dark;
+          width: $medium;
+          height: $medium;
+        }
+      }
+    }
+
+    .reply-body {
+      margin-bottom: $large;
+
+      .reply-p {
+        color: $text-primary
+      }
+    }
+  }
+
+  .reply-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+    .reply-done {
+      border-radius: $small;
+      padding: 16px $large;
+      background-color: $light;
+      margin-right: $small;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+  
+      .reply-icon {
+        width: 28px;
+        height: 28px;
+        color: $dark;
+        transition: 0.2s ease-in-out;
+      }
+    }
+  
+    .reply-done:hover {
+      opacity: 0.8;
+      background-color: $light-gold;
+      
+      .reply-icon {
+        color: $white;
+      }
+    }
+  
+    .reply-button {
+      text-align: center;
+      padding: 16px $large;
+      margin: auto 0;
+      background-color: $blue;
+      border-radius: $small;
+      margin-left: $small;
+      opacity: 0.7;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+  
+      .reply-button-text {
+        color: $white;
+      }
+    }
+  
+    .reply-button:hover {
+      opacity: 1;
+    }
+  }
+
+}

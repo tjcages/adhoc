@@ -1,0 +1,33 @@
+.layout_container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  background-color: $body-bg;
+
+  .titlebar {
+    -webkit-app-region: drag;
+    height: 32px;
+    width: 100%;
+    position: absolute;
+    margin-bottom: 10px;
+  }
+
+
+  .layout-navigation {
+    padding-top: $medium;
+    flex-grow: 0.2
+    max-width: 400px;
+  }
+
+  .layout-browser {
+    padding-top: 0;
+    height: 100%;
+    flex-grow: 0.6;
+    max-width: 50%;
+  }
+
+  .layout-sidebar {
+    flex-grow: 0.2;
+  }
+}

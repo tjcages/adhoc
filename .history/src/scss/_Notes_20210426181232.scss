@@ -1,0 +1,83 @@
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: space-between;
+  height: 100%;
+
+  .notes-main {
+    flex-grow: 1;
+
+  }
+
+  .notes-footer {
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
+
+    .navigation-workspace {
+      display: flex;
+      flex-direction: row;
+
+      .navigation-workspace-title {
+        color: $white;
+        margin: auto;
+        margin: auto $small;
+      }
+
+      .navigation-workspace-icon {
+        border-radius: $xLarge;
+        overflow: hidden;
+        width: $large;
+        height: $large;
+
+        .navigation-workspace-icon-outer {
+          background-color: $orange;
+          opacity: 0.3;
+          margin: auto;
+          width: 100%;
+          height: 100%;
+        }
+
+        .navigation-workspace-icon-inner {
+          background-color: $orange;
+          position: fixed;
+          top: $large;
+          left: $large;
+          width: $small;
+          height: $small;
+          border-radius: $xLarge;
+        }
+      }
+    }
+    
+    .navigation-options {
+      display: flex;
+      flex-direction: row;
+      margin: auto 0;
+
+      .navigation-icon {
+        width: $medium;
+        height: $medium;
+        color: $text-dark;
+        margin: auto 0;
+        margin-left: $small;
+        cursor: pointer;
+      }
+
+      .navigation-add {
+        padding: 8px 20px;
+        background-color: $white;
+        border-radius: $small;
+        margin-left: $medium;
+        cursor: pointer;
+        
+        .navigation-add-icon {
+          width: 20px;
+          height: 20px;
+          color: $body-bg;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+}
