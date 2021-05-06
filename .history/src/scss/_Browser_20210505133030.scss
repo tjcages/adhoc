@@ -1,0 +1,100 @@
+.browser-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: auto;
+  height: 100vh;
+  background-color: $white;
+  color: #000;
+  margin: $large;
+
+  .browser-spinner {
+    color: $text-light;
+    opacity: 0.4;
+  }
+
+  .browser-content {
+    display: flex;
+    overflow: auto;
+    flex-grow: 1;
+    flex-direction: column;
+    padding-left: $xLarge;
+    padding-right: $xLarge;
+    padding-bottom: $massive;
+    padding-top: $medium;
+
+    .browser-header {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: $spacer;
+
+      .profile-image {
+        max-width: $xLarge;
+        height: $xLarge;
+        background-color: $light;
+        border-radius: $small;
+        padding: $small;
+        box-shadow: 0 0 0 2px $light2;
+
+        .profile-icon {
+          color: $light3;
+          width: $medium;
+          height: $medium;
+        }
+      }
+
+      .browser-titles {
+        display: flex;
+        flex-direction: column;
+        // margin-left: $medium;
+
+        .browser-name {
+          color: $text-light;
+        }
+
+        .browser-title {
+          color: $text-primary;
+          margin-bottom: $small;
+        }
+      }
+    }
+
+    .tags-container {
+      display: flex;
+      flex-direction: row;
+
+      .browser-tags {
+        display: flex;
+        margin-bottom: $medium;
+  
+        .tag {
+          background-color: $tag-green;
+          padding: 4px 8px;
+          border-radius: $spacer;
+          margin-right: $spacer;
+  
+          .tag-title {
+            color: $body-bg;
+          }
+  
+          .blue {
+            color: $white;
+          }
+        }
+  
+        .blue {
+            background-color: $tag-purple;
+        }
+      } 
+
+      .browser-name {
+        color: $text-light;
+        margin: 4px $medium;
+      }
+    }
+
+    #message-iframe {
+      min-width: 100%;
+    }
+  }
+}

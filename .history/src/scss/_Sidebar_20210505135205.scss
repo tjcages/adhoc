@@ -1,0 +1,93 @@
+.sidebar-container {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: $body-bg;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: $small;
+    padding-bottom: 0;
+
+    .sidebar-main {
+        padding-top: $small;
+
+        .sidebar-button {
+            border-radius: $large;
+            padding: 16px;
+            width: 56px;
+            height: 56px;
+            transition: 0.2s ease-in-out; 
+            margin-right: $small;
+            margin-left: $spacer;
+            margin-bottom: $medium;
+            cursor: pointer;
+            background-color: $dark;
+
+            .sidebar-icon {
+                width: $medium;
+                height: $medium;
+                color: $text-dark;
+            }
+        }
+
+        .sidebar-button:hover {
+
+          .sidebar-icon {
+            color: $white;
+          }
+      }
+    }
+
+    .sidebar-user {
+      margin-bottom: -4px;
+
+        .sidebar-button {
+            padding: 16px;
+            transition: 0.2s ease-in-out; 
+            margin-right: $small;
+            margin-bottom: $small;
+            cursor: pointer;
+            border: 1px solid $text-dark;
+            border-radius: $large;
+
+            .sidebar-icon {
+                width: 28px;
+                height: 28px;
+                color: $text-dark;
+                transition: 0.2s ease-in-out; 
+            }
+        }
+
+        .sidebar-button:hover {
+            background-color: $dark;
+            
+            .sidebar-icon {
+              color: $white;
+            }
+        }
+    }
+
+    .browser-replybutton {
+      background-color: $blue;
+      width: 72px;
+      height: 72px;
+      border-radius: 100px;
+      padding: 17px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      opacity: 0.8;
+      cursor: pointer;
+      transition: 0.2s ease-in-out; 
+
+      .reply-icon {
+          color: $white;
+          width: $large;
+          height: $large;
+          transform: scaleX(-1);
+      }
+  }
+
+  .browser-replybutton:hover {
+      opacity: 1.0;
+  }
+}
